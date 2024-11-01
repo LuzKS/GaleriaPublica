@@ -1,6 +1,7 @@
 package santos.souza.lucas.galeriapublica;
 
 import android.Manifest;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -22,7 +23,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+
     BottomNavigationView bottomNavigationView;
+    static int RESULT_REQUEST_PERMISSION = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +73,19 @@ public class MainActivity extends AppCompatActivity {
         permissions.add(Manifest.permission.READ_EXTERNAL_STORAGE);
         checkForPermissions(permissions);
 
+    }
+
+    private void checkForPermissions(List<String> permissions){
+        List<String> permissionsNotGranted = new ArrayList<>();
+
+        for(String permission : permissions){
+            if(!hasPermission(permission)){
+                permissionsNotGranted.add(permission);
+                }
+            }
+        }
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            if(permissionsNotGranted.size() > 0)
     }
 
 }
