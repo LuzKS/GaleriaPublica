@@ -14,12 +14,17 @@
         app:layout_constraintBottom_toTopOf="@+id/btNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btNav"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/design_default_color_primary"
+        app:itemBackground="@color/design_default_color_primary"
+        app:itemTextColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
